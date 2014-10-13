@@ -70,10 +70,9 @@ fetchJSONFile("http://neapolitan.herokuapp.com/", function(data){
         "<h4>" + statuses.user.name + "</h4>" +
         "</div></div></div>";
     }
-  console.log(toWrite);
   var parser = new DOMParser()
-  var html = parser.parseFromString(toWrite, "text/html");
-  var status = html.childNodes[0];
+  var parsedHtml = parser.parseFromString(toWrite, "text/html");
+  var status = parsedHtml.childNodes[0];
   document.getElementById("content").appendChild(status);
   });
 });
